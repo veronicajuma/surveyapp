@@ -1,0 +1,34 @@
+<%= form_with(model: onlinesurvey) do |form| %>
+  <% if onlinesurvey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(onlinesurvey.errors.count, "error") %> prohibited this onlinesurvey from being saved:</h2>
+
+      <ul>
+        <% onlinesurvey.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name, "Enter your Name:" %><br/>
+    <%= form.text_field :name%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :laptop, "Do you own a laptop" %><br />
+    <%= form.label :laptop, "Yes", :value => "true"  %>
+    <%= form.radio_button :laptop, 'Yes',:checked => true %>
+    <%= form.label :laptop, "No", :value => "false" %>
+    <%= form.radio_button :laptop, 'No' %>
+  </div>
+
+  <div class="form-group">
+     <%= form.select :manufacturer, ['No laptop','Taifa','HP', 'Lenovo','MacBook', 'Acer','Asus'] %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "Submit response",class:"btn btn-primary" %>
+  </div>
+<% end %>

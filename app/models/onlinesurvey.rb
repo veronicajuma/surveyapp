@@ -1,0 +1,2 @@
+class Onlinesurvey < ApplicationRecord
+end

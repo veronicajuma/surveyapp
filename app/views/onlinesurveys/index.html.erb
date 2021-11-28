@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>SURVEY RESPONSES</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Laptop</th>
+      <th>Manufacturer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @onlinesurveys.each do |onlinesurvey| %>
+      <tr>
+        <td><%= onlinesurvey.name %></td>
+        <td><%= onlinesurvey.laptop %></td>
+        <td><%= onlinesurvey.manufacturer %></td>
+        <td><%= link_to 'Show', onlinesurvey %></td>
+        <td><%= link_to 'Edit', edit_onlinesurvey_path(onlinesurvey) %></td>
+        <td><%= link_to 'Destroy', onlinesurvey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New survey form', new_onlinesurvey_path %>
