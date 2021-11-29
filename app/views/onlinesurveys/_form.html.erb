@@ -18,10 +18,10 @@
 
   <div class="form-group">
     <%= form.label :laptop, "Do you own a laptop?" %><br />
-    <%= form.label :laptop, "Yes"%>
-    <%= form.radio_button :laptop, 'Yes',:checked => true %>
+    <%= form.label :laptop, "Yes", :value => "true"  %>
+    <%= form.radio_button :laptop, 'Yes'%>
     <%= form.label :laptop, "No", :value => "false" %>
-    <%= form.radio_button :laptop, 'No', :value => "true" %>
+    <%= form.radio_button :laptop, 'No', :checked => true%>
   </div>
 
   <div class="form-group">
