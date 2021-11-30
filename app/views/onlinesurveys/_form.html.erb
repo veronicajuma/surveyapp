@@ -13,20 +13,20 @@
 
   <div class="form-group">
     <%= form.label :name, "Enter your Name:" %><br/>
-    <%= form.text_field :name%>
+    <%= form.text_field :name, class:"form-control"%>
   </div>
 
   <div class="form-group">
     <%= form.label :laptop, "Do you own a laptop?" %><br />
-    <%= form.label :laptop, "Yes", :value => "true"  %>
-    <%= form.radio_button :laptop, 'Yes'%>
-    <%= form.label :laptop, "No", :value => "false" %>
+    <%= form.radio_button :laptop, 'Yes', class:"form-check-input"%>
+	<%= form.label :laptop, "Yes", :value => "true"%><br/>
     <%= form.radio_button :laptop, 'No', :checked => true%>
+	<%= form.label :laptop, "No", :value => "false" %>
   </div>
 
   <div class="form-group">
   <%= form.label :laptop, "Which type of laptop?" %><br />
-     <%= form.select :manufacturer, ['No laptop','Taifa','HP', 'Lenovo','MacBook', 'Acer','Asus'] %>
+     <%= form.select :manufacturer, ['No laptop','Taifa','HP', 'Lenovo','MacBook', 'Acer','Asus'],{},{ class: "form form-group form-control" } %>
   </div>
 
   <div class="form-group">
